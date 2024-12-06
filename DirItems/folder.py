@@ -35,9 +35,9 @@ class Folder:
                 str(child.path),
                 child.name,
                 "Folder" if isinstance(child, Folder) else "File",
-                child.type if isinstance(child, File) else "None",
-                f"{child.size} bytes" if isinstance(child, File) else "None",
-                child.lastModified if isinstance(child, File) else "None",
+                child.type if isinstance(child, File) else " ",
+                f"{child.size} bytes" if isinstance(child, File) else " ",
+                child.lastModified if isinstance(child, File) else " ",
                 style="bold green" if isinstance(child, File) else "bold blue"
             )
         console.print(table)
