@@ -14,11 +14,11 @@ class FolderManager:
         self.console = Console()
 
     def print(self) -> None:
-        self.console.print(f"[bold green]Folder:[/bold green] {self.root}")
+        self.console.print(f"Folder: {self.root}")
         self._print_folder_table(self.rootFolder)
 
     def _print_folder_table(self, folder: Folder) -> None:
-        table = Table(title=f"[blue]{folder.path}[/blue]")
+        table = Table(title=f"{folder.path}")
         table.add_column("Path", justify="left")
         table.add_column("Name", justify="left")
         table.add_column("Type", justify="center")
