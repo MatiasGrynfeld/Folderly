@@ -30,6 +30,7 @@ class Folder:
         table.add_column("Extension", justify="center")
         table.add_column("Size", justify="right")
         table.add_column("Last Modified", justify="right")
+        table.add_column("Last Opened", justify="right")
         for child in self.children:
             table.add_row(
                 str(child.path),
@@ -38,6 +39,7 @@ class Folder:
                 child.type if isinstance(child, File) else " ",
                 f"{child.size} bytes" if isinstance(child, File) else " ",
                 child.lastModified if isinstance(child, File) else " ",
+                child.access if isinstance(child, File) else " ",
                 style="bold green" if isinstance(child, File) else "bold blue"
             )
         console.print(table)
